@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.WebApi", "ChatGPTClone.WebApi\ChatGPTClone.WebApi.csproj", "{AB82ECFC-B948-4D38-9522-D32BF9A545C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.WasmClient", "ChatGPTClone.WasmClient\ChatGPTClone.WasmClient.csproj", "{479BD431-D085-4ED1-9863-AE19C2FAAC90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.Domain", "ChatGPTClone.Domain\ChatGPTClone.Domain.csproj", "{B893E29F-BB1E-4796-A4EB-902534F9ED4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB82ECFC-B948-4D38-9522-D32BF9A545C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB82ECFC-B948-4D38-9522-D32BF9A545C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB82ECFC-B948-4D38-9522-D32BF9A545C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB82ECFC-B948-4D38-9522-D32BF9A545C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479BD431-D085-4ED1-9863-AE19C2FAAC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479BD431-D085-4ED1-9863-AE19C2FAAC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479BD431-D085-4ED1-9863-AE19C2FAAC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479BD431-D085-4ED1-9863-AE19C2FAAC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B893E29F-BB1E-4796-A4EB-902534F9ED4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B893E29F-BB1E-4796-A4EB-902534F9ED4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B893E29F-BB1E-4796-A4EB-902534F9ED4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B893E29F-BB1E-4796-A4EB-902534F9ED4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B00FF595-D450-4A19-9535-C20C0A96F07B}
+	EndGlobalSection
+EndGlobal
