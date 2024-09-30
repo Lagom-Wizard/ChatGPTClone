@@ -1,0 +1,17 @@
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.csproj.AssemblyReference.cache
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.AssemblyInfoInputs.cache
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.AssemblyInfo.cs
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Persistence.deps.json
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Persistence.runtimeconfig.json
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Persistence.dll
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Persistence.pdb
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Domain.dll
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\bin\Debug\net8.0\ChatGPTClone.Domain.pdb
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.csproj.CopyComplete
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.dll
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\refint\ChatGPTClone.Persistence.dll
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.pdb
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ChatGPTClone.Persistence.genruntimeconfig.cache
+C:\Users\Sıla\OneDrive\Belgeler\c# dersleri\ChatGPTClone\ChatGPTClone.Persistence\obj\Debug\net8.0\ref\ChatGPTClone.Persistence.dll
