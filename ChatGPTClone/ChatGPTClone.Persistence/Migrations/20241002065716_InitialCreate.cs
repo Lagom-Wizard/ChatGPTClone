@@ -31,6 +31,8 @@ namespace ChatGPTClone.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FirstName = table.Column<string>(type: "text", nullable: true),
+                    LastName = table.Column<string>(type: "text", nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     ModifiedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
@@ -85,7 +87,6 @@ namespace ChatGPTClone.Persistence.Migrations
                     Model = table.Column<int>(type: "integer", nullable: false),
                     Threads = table.Column<string>(type: "jsonb", nullable: false),
                     AppUserId = table.Column<Guid>(type: "uuid", nullable: false),
-                    AppUserId1 = table.Column<Guid>(type: "uuid", nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     ModifiedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
@@ -100,11 +101,6 @@ namespace ChatGPTClone.Persistence.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ChatSessions_Users_AppUserId1",
-                        column: x => x.AppUserId1,
-                        principalTable: "Users",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -196,11 +192,6 @@ namespace ChatGPTClone.Persistence.Migrations
                 name: "IX_ChatSessions_AppUserId",
                 table: "ChatSessions",
                 column: "AppUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ChatSessions_AppUserId1",
-                table: "ChatSessions",
-                column: "AppUserId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ChatSessions_Threads",
