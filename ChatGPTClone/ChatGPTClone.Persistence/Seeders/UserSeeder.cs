@@ -15,17 +15,17 @@ public class UserSeeder : IEntityTypeConfiguration<AppUser>
         var initialUser = new AppUser
         {
             Id = initalUserId,
-            UserName = "alper",
-            NormalizedUserName = "ALPER",
-            Email = "alper@gmail.com",
-            NormalizedEmail = "ALPER@GMAIL.COM",
+            UserName = "sila",
+            NormalizedUserName = "SILA",
+            Email = "sila@gmail.com",
+            NormalizedEmail = "SILA@GMAIL.COM",
             EmailConfirmed = true,
             CreatedByUserId = initalUserId.ToString(),
             CreatedOn = new DateTimeOffset(new DateTime(2024, 08, 28)),
             ConcurrencyStamp = Guid.NewGuid().ToString(),
             SecurityStamp = Guid.NewGuid().ToString(),
-            FirstName = "Alper",
-            LastName = "Tunga",
+            FirstName = "Sila",
+            LastName = "Kuscu",
             LockoutEnabled = false,
             AccessFailedCount = 0
         };
