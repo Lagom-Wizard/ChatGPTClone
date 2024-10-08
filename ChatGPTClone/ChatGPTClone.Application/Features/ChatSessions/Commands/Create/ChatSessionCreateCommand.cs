@@ -5,7 +5,7 @@ using MediatR;
 
 namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
 {
-    public class ChatSessionCreateCommand : IRequest<Guid>>
+    public class ChatSessionCreateCommand : IRequest<Guid>
     {
         public GptModelType Model { get; set; }
         public string Content { get; set; }
@@ -14,7 +14,7 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
         {
             return new ChatSession()
             {
-                Id = Guid.NewGuid(), 
+                Id = Ulid.NewUlid().ToGuid(), 
                 Model = Model,
                 AppUserId = userId,
                 CreatedOn = DateTimeOffset.UtcNow,
@@ -24,13 +24,13 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
                 [
                     new ChatThread()
                     {
-                        Id = Guid.NewGuid().ToString(),
+                        Id = Ulid.NewUlid().ToString(),
                         CreatedOn = DateTimeOffset.UtcNow,
                         Messages =
                         [
                             new ChatMessage()
                             {
-                                Id = Guid.NewGuid().ToString(),
+                                Id = Ulid.NewUlid().ToString(),
                                 Model = Model,
                                 Type = ChatMessageType.System,
                                 Content = "You're a very helpful and thoughtful assistant which loves to help people.",
@@ -38,7 +38,7 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
                             },
                             new ChatMessage()
                             {
-                                Id = Guid.NewGuid().ToString(),
+                                Id = Ulid.NewUlid().ToString(),
                                 Model = Model,
                                 Type = ChatMessageType.User,
                                 Content = Content,
