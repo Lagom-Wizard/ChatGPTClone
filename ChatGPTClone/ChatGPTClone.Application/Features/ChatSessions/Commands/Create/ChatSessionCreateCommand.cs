@@ -1,11 +1,12 @@
-﻿using ChatGPTClone.Domain.Entities;
+﻿using ChatGPTClone.Application.Common.Models.General;
+using ChatGPTClone.Domain.Entities;
 using ChatGPTClone.Domain.Enums;
 using ChatGPTClone.Domain.ValueObjects;
 using MediatR;
 
 namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
 {
-    public class ChatSessionCreateCommand : IRequest<Guid>
+    public class ChatSessionCreateCommand : IRequest<ResponseDto<Guid>>
     {
         public GptModelType Model { get; set; }
         public string Content { get; set; }
@@ -14,7 +15,7 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
         {
             return new ChatSession()
             {
-                Id = Ulid.NewUlid().ToGuid(), 
+                Id = Ulid.NewUlid().ToGuid(), // DateTime.UtcNow DateTime.Now IIDService.NewId(), Guid.V7.NEWGuid
                 Model = Model,
                 AppUserId = userId,
                 CreatedOn = DateTimeOffset.UtcNow,
@@ -33,7 +34,7 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
                                 Id = Ulid.NewUlid().ToString(),
                                 Model = Model,
                                 Type = ChatMessageType.System,
-                                Content = "You're a very helpful and thoughtful assistant which loves to help people.",
+                                Content = "You're a very helpful and happy assistant which loves to help people.",
                                 CreatedOn = DateTimeOffset.UtcNow
                             },
                             new ChatMessage()
