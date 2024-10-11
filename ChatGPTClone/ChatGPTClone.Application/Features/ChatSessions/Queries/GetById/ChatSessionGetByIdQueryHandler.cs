@@ -21,5 +21,14 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Queries.GetById
             return ChatSessionGetByIdDto.MapFromChatSession(chatSession);
 
         }
+
+        //public async Task<ChatSessionGetByIdDto> Handle(ChatSessionGetByIdQuery request, CancellationToken cancellationToken)
+        //{
+         //   return _context.ChatSessions
+         //       .AsNoTracking()
+         //       .Select(x => ChatSessionGetByIdDto.MapFromChatSession(x))
+         //       .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+        //}
+
     }
 }
