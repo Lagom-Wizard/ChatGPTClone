@@ -35,7 +35,6 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
             return new ResponseDto<Guid>(chatSession.Id, "A new chat session was created successfully.");
         }
 
-       
         private ChatMessage CreateAssistantChatMessage(string response, GptModelType model)
         {
             return new ChatMessage()
