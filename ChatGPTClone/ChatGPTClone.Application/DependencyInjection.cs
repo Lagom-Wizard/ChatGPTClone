@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using ChatGPTClone.Application.Behaviors;
+using ChatGPTClone.Application.Common.Behaviours;
 
 namespace ChatGPTClone.Application
 {
