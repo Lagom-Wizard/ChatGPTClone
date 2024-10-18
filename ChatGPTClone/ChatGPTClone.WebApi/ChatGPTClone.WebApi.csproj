@@ -10,12 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatGPTClone.Domain\ChatGPTClone.Domain.csproj" />
+    <ProjectReference Include="..\ChatGPTClone.Application\ChatGPTClone.Application.csproj" />
+    <ProjectReference Include="..\ChatGPTClone.Infrastructure\ChatGPTClone.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
