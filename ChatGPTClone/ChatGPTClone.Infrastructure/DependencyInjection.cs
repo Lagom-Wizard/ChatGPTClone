@@ -1,5 +1,5 @@
 ﻿using ChatGPTClone.Application.Common.Interfaces;
-using ChatGPTClone.Domain.Identity;
+using ChatGPTClone.Domain.Settings;
 using ChatGPTClone.Infrastructure.Identity;
 using ChatGPTClone.Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Identity;
@@ -23,6 +23,9 @@ namespace ChatGPTClone.Infrastructure
             services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(connectionString));
 
             services.AddScoped<ApplicationDbContext, ApplicationDbContext>();
+
+            // JWT ayarlarını yapılandırır
+            services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
             return services;
         }
