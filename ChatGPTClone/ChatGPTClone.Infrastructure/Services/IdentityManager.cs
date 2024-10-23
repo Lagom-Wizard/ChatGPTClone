@@ -39,5 +39,20 @@ namespace ChatGPTClone.Infrastructure.Services
 
             return new IdentityLoginResponse(jwtResponse.Token, jwtResponse.ExpiresAt);
         }
+
+        Task<bool> IIdentityService.AuthenticateAsync(IdentityAuthenticateRequest request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> IIdentityService.CheckEmailExistAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IdentityLoginResponse> IIdentityService.LoginAsync(IdentityLoginRequest request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
