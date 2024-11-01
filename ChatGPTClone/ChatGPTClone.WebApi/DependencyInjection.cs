@@ -1,7 +1,10 @@
 ﻿using ChatGPTClone.Application.Common.Interfaces;
 using ChatGPTClone.WebApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.IdentityModel.Tokens;
 using System.Globalization;
+using System.Text;
 
 namespace ChatGPTClone.WebApi
 {
@@ -39,6 +42,34 @@ namespace ChatGPTClone.WebApi
                 options.SupportedUICultures = supportedCultures;
 
                 options.ApplyCurrentCultureToResponseHeaders = true;
+            });
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                var secretKey = configuration["JwtSettings:SecretKey"];
+
+                if (string.IsNullOrEmpty(secretKey))
+                    throw new ArgumentNullException("JwtSettings:SecretKey is not set.");
+
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["JwtSettings:Issuer"],
+                    ValidAudience = configuration["JwtSettings:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+                    ClockSkew = TimeSpan.Zero
+                };
             });
 
             return services;
