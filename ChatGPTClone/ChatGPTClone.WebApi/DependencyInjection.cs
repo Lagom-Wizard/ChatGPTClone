@@ -1,10 +1,11 @@
-﻿using ChatGPTClone.Application.Common.Interfaces;
+﻿using System.Globalization;
+using System.Text;
+using ChatGPTClone.Application.Common.Interfaces;
 using ChatGPTClone.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.IdentityModel.Tokens;
-using System.Globalization;
-using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace ChatGPTClone.WebApi
 {
@@ -12,12 +13,26 @@ namespace ChatGPTClone.WebApi
     {
         public static IServiceCollection AddWebApi(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
+
+            services.AddMemoryCache();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder => builder
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyHeader());
+            });
+
             services.AddHttpContextAccessor();
 
             services.AddScoped<ICurrentUserService, CurrentUserManager>();
 
             services.AddSingleton<IEnvironmentService, EnvironmentManager>(sp => new EnvironmentManager(environment.WebRootPath));
 
+            //Localization
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.Configure<RequestLocalizationOptions>(options =>
@@ -70,6 +85,40 @@ namespace ChatGPTClone.WebApi
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
                     ClockSkew = TimeSpan.Zero
                 };
+            });
+
+            services.AddSwaggerGen(setupAction =>
+            {
+
+                setupAction.SwaggerDoc(
+                    "v1",
+                    new OpenApiInfo()
+                    {
+                        Title = "ChatGPTClone Web API",
+                        Version = "1",
+                        Description = "Through this API you can access ChatGPTClone App's details",
+                        Contact = new OpenApiContact()
+                        {
+                            Email = "silaksc27@gmail.com",
+                            Name = "Sıla Kuscu",
+                            Url = new Uri("https://sila.ksc/")
+                        },
+                        License = new OpenApiLicense()
+                        {
+                            Name = "© 2024 Sıla Kuscu Tüm Hakları Saklıdır",
+                            Url = new Uri("https://yazilim.academy/")
+                        }
+                    });
+
+                setupAction.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+
+                setupAction.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Description = $"Input your Bearer token in this format - Bearer token to access this API",
+                });
             });
 
             return services;
