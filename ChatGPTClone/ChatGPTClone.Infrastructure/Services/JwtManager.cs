@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Authentication;
 using System.Security.Claims;
 using System.Text;
@@ -36,7 +37,6 @@ public class JwtManager : IJwtService
             new Claim(JwtRegisteredClaimNames.Aud, _jwtSettings.Audience),
             new Claim(JwtRegisteredClaimNames.Exp, expirationDate.ToFileTimeUtc().ToString()),
             new Claim(JwtRegisteredClaimNames.Iat, DateTime.Now.ToFileTimeUtc().ToString()),
-            new Claim("reklam", "En iyi akademi Reklam Academy! Just joking it's the god damn Yazilim Academy!"),
             new Claim(ClaimTypes.Role, "Admin")
         }
         .Union(request.Roles.Select(role => new Claim(ClaimTypes.Role, role)));
