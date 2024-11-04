@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Resend;
-    
+
 namespace ChatGPTClone.Infrastructure
 {
     // Bu sınıf, uygulama altyapısının bağımlılık enjeksiyonunu yapılandırır
@@ -23,18 +23,17 @@ namespace ChatGPTClone.Infrastructure
             // ApplicationDbContext'i PostgreSQL ile kullanmak üzere yapılandırır
             services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(connectionString));
 
-            services.AddScoped<ApplicationDbContext, ApplicationDbContext>();
+            // IApplicationDbContext'i ApplicationDbContext ile eşler
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
             // JWT ayarlarını yapılandırır
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
-            ConfigureJwtSettings(services, configuration);
-
             services.AddScoped<IJwtService, JwtManager>();
 
-            services.AddScoped<IIdentityServices, IdentityManager>();
+            services.AddScoped<IIdentityService, IdentityManager>();
 
-            services.AddScoped<IEmailServices, ResendEmailManager>();
+            services.AddScoped<IEmailService, ResendEmailManager>();
 
             services.AddIdentity<AppUser, Role>(options =>
             {
@@ -47,8 +46,8 @@ namespace ChatGPTClone.Infrastructure
                 options.Password.RequiredUniqueChars = 0;
                 options.Password.RequiredLength = 6;
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
             // Resend
             services.AddOptions();
