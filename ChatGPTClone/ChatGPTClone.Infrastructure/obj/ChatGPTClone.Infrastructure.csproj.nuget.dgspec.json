@@ -48,6 +48,24 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.10.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Localization.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Ulid": {
+              "target": "Package",
+              "version": "[1.3.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -109,6 +127,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -165,6 +187,9 @@
             "projectReferences": {
               "C:\\Users\\Sıla\\OneDrive\\Belgeler\\c# dersleri\\ChatGPTClone\\ChatGPTClone.Application\\ChatGPTClone.Application.csproj": {
                 "projectPath": "C:\\Users\\Sıla\\OneDrive\\Belgeler\\c# dersleri\\ChatGPTClone\\ChatGPTClone.Application\\ChatGPTClone.Application.csproj"
+              },
+              "C:\\Users\\Sıla\\OneDrive\\Belgeler\\c# dersleri\\ChatGPTClone\\ChatGPTClone.Domain\\ChatGPTClone.Domain.csproj": {
+                "projectPath": "C:\\Users\\Sıla\\OneDrive\\Belgeler\\c# dersleri\\ChatGPTClone\\ChatGPTClone.Domain\\ChatGPTClone.Domain.csproj"
               }
             }
           }
@@ -179,6 +204,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -189,9 +218,33 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.4, )"
+            },
+            "Resend": {
+              "target": "Package",
+              "version": "[0.0.7, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.1.2, )"
             }
           },
           "imports": [
