@@ -1,4 +1,4 @@
-﻿using ChatGPTClone.Domain.Identity;
+﻿using ChatGPTClone.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
