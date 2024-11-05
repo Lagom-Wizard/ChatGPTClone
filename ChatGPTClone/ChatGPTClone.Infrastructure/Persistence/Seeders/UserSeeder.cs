@@ -30,7 +30,7 @@ public class UserSeeder : IEntityTypeConfiguration<AppUser>
             AccessFailedCount = 0
         };
 
-        initialUser.PasswordHash = new PasswordHasher<AppUser>().HashPassword(initialUser, "123alper123");
+        initialUser.PasswordHash = new PasswordHasher<AppUser>().HashPassword(initialUser, "123sila123");
 
         builder.HasData(initialUser);
     }
